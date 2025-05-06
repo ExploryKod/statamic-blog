@@ -1,0 +1,14 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: standard_button
+            field:
+              clearable: true
+              default: Valider
+              type: button_group
+              display: 'Standard button'
+              instructions: 'Use this button everywhere'

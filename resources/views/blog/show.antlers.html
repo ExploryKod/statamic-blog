@@ -1,0 +1,35 @@
+<h1 class="text-3xl bg-green-400 text-center text-green-900 font-bold mt-6 p-6">{{ title }}</h1>
+<div class="border text-center text-green-600 border-green-400 mt-8 p-3 text-xs uppercase">
+    Published on {{ date }} by {{ author:name }}
+</div>
+ 
+<article class="space-y-4 mt-8 text-sm text-green-400 leading-loose">
+    {{ content }}
+</article>
+<div class="mt-8 h-[500px]">
+ 
+{{? $markers = [
+    0 => 'color=#7c51ad|icon=locate-fixed|lat=-21|lon=-41|iconSize=30|strokeWidth=1|text=Message for marker 3',
+    1 => [
+            "color" => "#b84141",
+            "lat" => "43.9487",
+            "lon" => "4.8059",
+            "iconSize" => "35",
+            "strokeWidth" => "1",
+            "text" => "Message for <b>Avignon</b>"
+        ]
+    ]
+?}}
+{{ map:markers
+    id="flowers" 
+    width="500px"
+    height="500px"
+    colorScheme="light" 
+    popup="true" 
+    center="[43.9487,4.8059]" 
+    zoom="5" 
+    maxZoom="15" 
+    center="[43.9487,4.8059]" 
+    markers="{{ $markers }}"
+}}
+</div>
